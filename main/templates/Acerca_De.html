@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block titulo %}
+Conocenos
+{% endblock titulo %}
+{% block contenido %}
+        <div class="col-sm-6 col-md-4 col-lg-12 ">
+                    <a href="{% static 'nan - copia.png' %}" data-lightbox="galeria" data-title="Modas Nancy"><img src="{% static 'nan - copia.png' %}" class="img-thumbnail" alt="imagen2"></a>
+            <div class="caption">
+                <p class="text-justify"><h3>Misión:<br><br>Somos una empresa comprometida a ofrecer a sus clientes productos de calidad a los mejores precios, mediante un servicio personalizado a cada uno de nuestros clientes para su entera satisfacción.<br><br><br>Visión:<br><br>Ser una empresa lider en el mundo de la moda, que proporcione a la mujer los elementos necesarios para realzar su sueño "Confeccinar el vestido de sus sueños"<br><br><br>Razón de ser:<br><br>La idea surgio, cuando la futura novia de la familia García diseño un vestido exclusivo para ella, con esto preguntaban de donde habia salido, y fue ahi donde surgio la idea de diseñar sueños,de hacer realidad el sueño de todas aquellas mujeres que buscan algo adecuado a sus gustos.</h3></p>
+            </div>
+        </div>
+{% endblock contenido %}

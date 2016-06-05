@@ -1,0 +1,96 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang = "en"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>
+        {%block titulo%}
+        {%endblock%}
+        </title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+        <link href="{% static 'lightbox.css' %}" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Tangerine">
+        <link rel="stylesheet" href="{% static 'bootstrap.css' %}">
+        <link rel="stylesheet" href="{% static 'main.css' %}">
+
+        <script src="{% static 'modernizr-2.6.2.min.js' %}"></script>
+        
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+        
+        <!--Header-->
+        <header>
+            <div class="container">
+                <div class="row">
+                    <div class="hidden-xs col-sm-6 col-md-4 col-lg-4 centrar">
+                        <a href="#"><img src="{% static 'nan.png' %}" alt=""></a>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-8 col-lg-8">
+                        <h1 class="texto tamtex1">Modas Nancy</h1>
+                        <h5 class="texto tamtex2">Tu mejor opción en confecciones para toda ocasión!!!</h5>
+                    </div>
+                </div>
+            </div>
+        </header>
+        
+        <!--Barra de Navegacion-->
+        <nav class="navbar navbar-default">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Cambiar Navegacion</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="{% url 'home' %}" class="navbar-brand">Inicio</a>
+            </div>
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="{% url 'Pide_Tu_Cita' %}">Pide tu cita</a></li>
+                    <li><a href="{% url 'Contactanos' %}">Contáctanos</a></li>
+                    <li class="dropdown collapse navbar-collapse navbar-ex1-collapse"><a href="#" class="dropbtn" data-toggle="dropdown" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">Catálogo<b class="caret"></b></a>
+                        <ul class="dropdown-content">
+                            <li><a href="{% url 'Novias' %}">Novias</a></li>
+                            <li><a href="{% url 'XV_anios' %}">XV años</a></li>
+                            <li><a href="{% url 'Primeras_Comuniones' %}">Primeras comuniones</a></li>
+                            <li><a href="{% url 'Presentaciones' %}">Presentaciones</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="{% url 'Acerca_De' %}">Conocenos</a></li>
+                    <li><a href="{% url 'registro' %}">Registrate</a></li>
+                    <li><a href="{% url 'iniciodesesion' %}">Inicia sesión</a></li>
+                </ul>
+            </div>
+        </nav>
+            <div class="container centrar" id="main">
+        {%block contenido%}
+        {%endblock%} 
+            </div>
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="hidden-xs col-sm-6 col-md-4 col-lg-4 centrar">
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-8 col-lg-8">
+                        <h1 class="texto tamtex1">Modas Nancy</h1>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <script src="{% static 'modernizr-2.6.2.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'jquery-2.2.4.js' %}"></script>
+        <script src="{% static 'bootstrap.js' %}"></script>
+        <script src="{% static 'bootstrap.js' %}"></script>
+        <script src="{% static 'main.js' %}"></script>
+        <script src="{% static 'lightbox.js' %}"></script>
+    </body>
+</html>

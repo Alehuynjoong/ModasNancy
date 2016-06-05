@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block titulo %}
+Contactanos
+{% endblock titulo %}
+{% block contenido %}
+    <p>email: ejemplo@gmail.com</p><br>   
+    <p>telefono: 885 666 222</p><br>
+    <p>dirección: Calle Lopez Mateos Col Centro Núm. 43 </p><br>
+    <div id="map" style="width:50%; heigth:50%"></div>
+    <script>
+      function initMap() {
+        var mapDiv = document.getElementById('map');
+        var map = new google.maps.Map(mapDiv, {
+          center: {lat: 44.540, lng: -78.546},
+          zoom: 8
+        });
+      }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?callback=initMap" async defer></script>
+{% endblock contenido %}
