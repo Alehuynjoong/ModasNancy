@@ -3,41 +3,18 @@
 {% block titulo %}
 Pide tu cita
 {% endblock %}
+{%block menuPideTuCita%}
+<li><a href="{% url 'Pide_Tu_Cita' %}">Pide tu cita</a></li>
+{%endblock menuPideTuCita%}
 {% block contenido %}
 {% csrf_token %}
-    <form class="form-horizontal" role="form">
+    <form class="form-horizontal" role="form"  method="POST" enctype="multipart/form-data">
+          {% csrf_token %}
                 <h1>Datos de Contacto</h1>
-              <div class="form-group">
-                    <label for="ejemplo_email_3" class="col-lg-2 control-label">Nombre</label>
-                    <div class="col-xs-5">
-                      <input type="text" class="form-control" id="nombre" placeholder="Nombre">
-                    </div>
-              </div>
-              <div class="form-group">
-                    <label for="ejemplo_password_3" class="col-lg-2 control-label">Apellido</label>
-                    <div class="col-xs-5">
-                      <input type="text" class="form-control" id="Apellido" placeholder="apellido">
-                    </div>
-              </div>
-              <div class="form-group">
-                    <label for="ejemplo_password_3" class="col-lg-2 control-label">Tipo de cita</label>
-                    <div class="col-xs-1">
-                      <select class="form-control">
-                          <option>1</option>
-                          <option>2</option>
-                      </select>
-                    </div>
-                    <span class="help-block col-xs-5">selecciona 1 si es tu primera cita y 2 si es de seguimiento</span>
-              </div>
-              <div class="form-group">
-                    <label for="ejemplo_email_3" class="col-lg-2 control-label">Fecha</label>
-                    <div class="col-xs-2">
-                      <input type="date" class="form-control" id="nombre" placeholder="fecha">
-                    </div>
-              </div>
+              {{formularioPideTuCita.as_p}}
               <div class="form-group">
                 <div class="col-lg-offset-2 col-lg-10">
-                  <button type="submit" class="btn btn-default">Enviar</button>
+                  <button type="submit" class="btn btn-default">Registrarse</button>
                 </div>
               </div>
             </form>

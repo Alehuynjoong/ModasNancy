@@ -4,7 +4,7 @@
 XV Años
 {% endblock titulo %}
 {% block contenido %}
-<div class="row">
+<!--<div class="row">
                 <div class=" col-sm-6 col-md-4 col-lg-4 centrar">
                     <a href="{% static 'imgxv6.jpg' %}" data-lightbox="galeria" data-title="imagen 1"><img src="{% static 'imgxv6.jpg' %}" class="img-thumbnail" alt="imagen1"></a>
                     <div class="caption">
@@ -42,4 +42,32 @@ XV Años
                     </div>
                 </div>
            </div>
+
+-->
+  <table>
+    <thead>
+        <tr>
+            <td>Imagen</td>
+            <td>Nombre</td>
+            <td>Tipo</td>
+            <td>Presentacion</td>
+            <td>Precio</td>
+        </tr>
+    </thead>
+    <tbody>
+        {%for ele in productos%}
+        <tr>
+            <td><img src="{%if ele.imagen%}{{ele.imagen.url}}{%endif%}" alt="Foto del producto"/></td>
+            {%if user.is_authenticated%}
+            <td><a href="{%url 'editarProducto' ele.id%}">{{ele.nombre}}</a></td>
+            {%else%}
+            <td>{{ele.nombre}}</td>
+            {%endif%}
+            <td>{{ele.get_tipo_display}}</td>
+            <td>{{ele.presentacion}}</td>
+            <td>{{ele.precio}}</td>
+        </tr>
+        {%endfor%}
+    </tbody>
+   </table>
 {% endblock contenido %}

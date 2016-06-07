@@ -2,6 +2,14 @@ from django.shortcuts import render
 from django.shortcuts import render_to_response
 from django.template.context import RequestContext
 from django.contrib.auth.decorators import login_required
+from django.http import HttpResponseRedirect
+from django.http import HttpResponse
+from django.core.context_processors import csrf
+from django.shortcuts import render, redirect
+from .forms import CitasForm
+from .forms import RegistroForm
+from .forms import Catalogo
+
 
 def index (request):
 	return render_to_response('base.html',{
@@ -68,21 +76,58 @@ def registro (request):
 		
 		},RequestContext(request))
 
+def cita (request):
+	return render_to_response('cita.html',{
+		
+		},RequestContext(request))
+
+
+def usuarioRegistrado (request):
+	return render_to_response('usuarioRegistrado.html',{
+		
+		},RequestContext(request))
+
+
+def creaUsuario(request):
+    formulario = RegistroForm()
+    if request.method == 'POST':
+        formulario = RegistroForm(request.POST, request.FILES,)
+        if formulario.is_valid():
+            formulario.save()
+            return redirect('usuarioRegistrado')
+    return render_to_response('registro.html', {
+        'formularioRegistroUsuario': formulario,
+        'titulo': 'Registro de usuario',
+    }, RequestContext(request))
+
+
+def creaRegistroCatalogo(request):
+    formulario = RegistroCatalogoForm()
+    if request.method == 'POST':
+        formulario = RegistroCatalogoForm(request.POST, request.FILES,)
+        if formulario.is_valid():
+            formulario.save()
+            return redirect('registroDeCatalogo')
+    return render_to_response('XV_anios.html', {
+        'formularioRegistroCatalogo': formulario,
+        'titulo': 'Registro de item de Catalogo',
+    }, RequestContext(request))
+
+
+def creaCita(request):
+    formulario = CitasForm()
+    if request.method == 'POST':
+        formulario = CitasForm(request.POST, request.FILES,)
+        if formulario.is_valid():
+            formulario.save()
+            return redirect('cita')
+    return render_to_response('Pide_Tu_Cita.html', {
+        'formularioPideTuCita': formulario,
+        'titulo': 'Alta de un producto',
+    }, RequestContext(request))
+
 
 def iniciodesesion (request):
 	return render_to_response('iniciodesesion.html',{
 		
 		},RequestContext(request))
-
-	
-VAR = [1,2,3,4]
-
-
-def reporte(request):
-    response = HTTPResponse(content_type='text/csv')
-    response['Content-Disposition']='attachment; filename=unruly.csv'
-    writer = csv.writer(response)
-    writer.writerow(['Year','VAR'])
-    writer.writerow([year,num])
-
-    return response

@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block titulo %}
+Pide tu cita
+{% endblock %}
+{%block menuPideTuCita%}
+<li><a href="{% url 'Pide_Tu_Cita' %}">Pide tu cita</a></li>
+{%endblock menuPideTuCita%}
+{% block contenido %}
+{% csrf_token %}
+   <h1>USUARIO REGISTRADAAAAAAAAAAAAA</h1>
+{% endblock %}

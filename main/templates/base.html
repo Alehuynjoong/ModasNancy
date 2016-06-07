@@ -54,7 +54,9 @@
             </div>
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav">
-                    <li><a href="{% url 'Pide_Tu_Cita' %}">Pide tu cita</a></li>
+                  <!--  <li><a href="{% url 'Pide_Tu_Cita' %}">Pide tu cita</a></li>  -->
+                  {%block menuPideTuCita%}
+                  {%endblock%}
                     <li><a href="{% url 'Contactanos' %}">Contáctanos</a></li>
                     <li class="dropdown collapse navbar-collapse navbar-ex1-collapse"><a href="#" class="dropbtn" data-toggle="dropdown" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">Catálogo<b class="caret"></b></a>
                         <ul class="dropdown-content">

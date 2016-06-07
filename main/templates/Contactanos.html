@@ -4,18 +4,20 @@
 Contactanos
 {% endblock titulo %}
 {% block contenido %}
-    <p>email: ejemplo@gmail.com</p><br>   
-    <p>telefono: 885 666 222</p><br>
-    <p>dirección: Calle Lopez Mateos Col Centro Núm. 43 </p><br>
-    <div id="map" style="width:50%; heigth:50%"></div>
-    <script>
-      function initMap() {
-        var mapDiv = document.getElementById('map');
-        var map = new google.maps.Map(mapDiv, {
-          center: {lat: 44.540, lng: -78.546},
-          zoom: 8
-        });
-      }
-    </script>
-    <script src="https://maps.googleapis.com/maps/api/js?callback=initMap" async defer></script>
+                <div class="media">
+                <div class="col-md-5 borde pull-left">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3756.1641456782804!2d-101.18802608556614!3d19.            705634537000485!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842d0e6d605fd16d%3A0xc33ad74691506022!2sPlan+de+Ayala+364%2C+Centro+Hist%C3%B3rico%2C+58000+Morelia%2C+Mich.!5e0!3m2!1ses!2smx!4v1465087207912" width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+                </div>
+                <div class="media-body">
+                    <h1>Estamos a tus ordenes en:</h1>
+                    <address>
+                      <strong>Modas Nancy</strong><br>
+                      Plan de Ayala, 364<br>
+                      58000, Morelia Michoacán<br>
+                      <abbr title="Teléfono">Tel:</abbr> 443 100 8822
+                      <br>
+                      <abbr title="email">alejandra020495@gmail.com</abbr>
+                    </address>
+            
+                </div>
 {% endblock contenido %}
